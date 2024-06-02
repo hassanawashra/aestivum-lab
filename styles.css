@@ -11,13 +11,6 @@ body, html {
             color: white;
         }
 
-        .hero-image {
-                    background-image: url('pics/wheat\ mature.jpeg');
-                    background-size: cover;
-                    background-position: center;
-                    height: 70vh; /* Adjust the height as needed */
-                    position: relative;
-                    animation:  2s ease-out;
 }
 
 .hero-text {
