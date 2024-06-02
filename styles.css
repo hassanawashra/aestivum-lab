@@ -11,34 +11,6 @@ body, html {
             color: white;
         }
 
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: transparent; /* Make text transparent */
-    text-align: center;
-    background-color: transparent; /* Remove grey background */
-    padding: 20px;
-    border-radius: 10px;
-    text-shadow: 
-        -1px -1px 0 #f5f5f5,  
-         1px -1px 0 #f7f7f7,
-        -1px  1px 0 #ffffff,
-         1px  1px 0 rgb(255, 255, 255),
-         0   0   10px black; /* Add black shadow */
-    animation: fadeIn 2s ease-out;
-}
-
-.hero-text h1 {
-    font-size: 4em; /* Increase font size */
-    font-weight: bold; /* Make the font bold */
-    margin: 0;
-    animation: pulse 2s infinite;
-}
-
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
