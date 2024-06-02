@@ -5,23 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Aestivum Lab</title>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arima Madurai', cursive;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-image {
+                    background-image: url('pics/wheat\ mature.jpeg');
+                    background-size: cover;
+                    background-position: center;
+                    height: 70vh; /* Adjust the height as needed */
+                    position: relative;
+                    animation:  2s ease-out;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent; /* Make text transparent */
+    text-align: center;
+    background-color: transparent; /* Remove grey background */
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 
+        -1px -1px 0 #f5f5f5,  
+         1px -1px 0 #f7f7f7,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 rgb(255, 255, 255),
+         0   0   10px black; /* Add black shadow */
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-text h1 {
+    font-size: 4em; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+        .hero-text p {
+            font-size: 1.2em;
+            color: white;
+            margin: 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background */
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.2s;
+            overflow: hidden; /* Ensure the content doesn't overflow */
+        }
+
+        .card img {
+            width: 40%; /* Adjust the width of the image */
+            float: right; /* Float the image to the right */
+            margin-left: 20px; /* Add some margin for spacing */
+            border-radius: 10px; /* Add border radius to match the card */
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card h2 {
+            margin-top: 10px;
+            color: #333;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            margin-top: 5px;
+            color: #555;
+            font-weight: normal;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
+    
     <header>
         <div class="hero-image">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="plant-protection.html">Plant Protection</a></li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="get-in-touch.html">Get in Touch</a></li>
-            </ul>
-        </nav>
+<!-- index.html -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plant-protection.html">Plant Protection</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="contact.html">Get in Touch</a></li>
+    </ul>
+</nav>
+
+<!-- about-me.html -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plant-protection.html">Plant Protection</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="contact.html">Get in Touch</a></li>
+    </ul>
+</nav>
+
             <div class="hero-text">
                 <h1><span style="font-weight: normal; display: block; color: black;">Welcome to</span> The Aestivum Lab</h1>
                 <p><span style="font-family: 'Poppins', sans-serif; font-weight: 30; font-size: 1.1em; letter-spacing: 4px;">Exploring the intersection of agronomy, plant protection, molecular biology, and food security</span></p>
             </div>
+           
         </div>
     </header>
     <main>
@@ -32,6 +196,7 @@
             <p>Food security of a community is defined as the physical and economical ability of that community to access sufficient safe and nutritious food required for the metabolism of the human body for a healthy life. (World bank + Global food security programme)</p>
             <p>Food security could be threatened by:</p>
             <ul
+            
                 <li>Lack of the essential food</li>
                 <li>Physical distances of the food source and the consumer</li>
                 <li>Economical situation that prevents people from affording available food</li>
@@ -64,7 +229,7 @@
                 <li>Understanding pathogen-cell interaction</li>
                 <li>Developing disease-resistant crops</li>
                 <li>Resistance gene identification and cloning</li>
-                <li>Exploring possibilities for in the native species for improving arable crops’ resistance</li>
+                <li>Exploring possibilities for in the native species for improving arable crops' resistance</li>
                 <li>Speeding up the processes of plant breeding</li>
                 <li>Natural AI identification and development</li>
                 <li>Marker-Assisted Breeding</li>
@@ -74,6 +239,3 @@
     </main>
     <footer>
         <p>&copy; 2024 The Aestivum
-    </footer>
-</body>
-</html>
