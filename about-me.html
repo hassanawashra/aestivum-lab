@@ -5,9 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - The Aestivum Lab</title>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arima Madurai', cursive;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-image {
+            background-image: url('pics/me.jpg'); /* Make sure this path is correct */
+            background-size: cover;
+            background-position: center;
+            height: 70vh; /* Adjust the height as needed */
+            position: relative;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: transparent; /* Make text transparent */
+            text-align: center;
+            background-color: transparent; /* Remove grey background */
+            padding: 20px;
+            border-radius: 10px;
+            text-shadow: 
+                -1px -1px 0 #f5f5f5,  
+                 1px -1px 0 #f7f7f7,
+                -1px  1px 0 #ffffff,
+                 1px  1px 0 rgb(255, 255, 255),
+                 0   0   10px black; /* Add black shadow */
+        }
+
+        .hero-text h1 {
+            font-size: 4em; /* Increase font size */
+            font-weight: bold; /* Make the font bold */
+            margin: 0;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background */
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.2s;
+            overflow: hidden; /* Ensure the content doesn't overflow */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    
     <header>
         <div class="hero-image">
             <nav>
@@ -15,7 +113,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="plant-protection.html">Plant Protection</a></li>
                     <li><a href="about-me.html">About Me</a></li>
-                    <li><a href="get-in-touch.html">Get in Touch</a></li>
+                    <li><a href="contact.html">Get in Touch</a></li>
                 </ul>
             </nav>
             <div class="hero-text">
@@ -23,40 +121,49 @@
             </div>
         </div>
     </header>
+    
     <main>
         <div class="card">
             <h2>About Me</h2>
             <section>
                 <h3>Background: Why Agronomy?</h3>
-                <p>Coming from a developing country that relies on importing to supply the community with the essential food have made me concerning about food security and the situation of the community.</p>
-                <p>Agronomy was my chosen way of contributing to improving food security levels by helping the production meeting the consumption.</p>
-                <p>Worked for 1 year as an agronomist for a farm, focusing on pest management techniques and agricultural practices of protected and outdoor crops.</p>
-                <p>Worked for 2 years as a freelancer agronomist, providing consulting services for household farmers to improved crop production and protection by applying feasible and sustainable solutions.</p>
-                <p>All the experience I gained and challenges I faced have made me wondering what is happening inside, at the Molecular Level?</p>
-                <p>This curiosity have shifted me from dreaming to be a traditional agronomist, to be a researcher in the field of crop protection and work in the applied research for real-world solutions.</p>
+                <p>I came from a developing country that relies on imports to supply the community with the essential food, which made me concerning about the future food security for the developing countries with limited resources. Moreover, the climate change, pests’ resistance to pesticides, and other environmental challenges are threatening the stability of food security for all countries.</p>
+
+                    <p>As a result, I chose to be part of the agricultural sector, trying to contribute to improving food security levels by helping the production meeting the consumption. I was part of several research projects done for developing the agricultural sector in rural areas (see Projects section).</p>
+                    
+                    <p>During my undergraduate years, I was building my own profile and experience in pest management and irrigation solutions, and advertising my experience to local farmers, which eventually lead me to start a small business (Burj for Agricultural Solutions) where I did trading for agricultural products, and provided paid/free consultancy services for local farmers, as well as providing solutions for challenges face farmers with their crops.</p>
+                    
+                    <p>I also worked for 1 year as an agronomist in an aquaponic farm, using minimal chemical pesticides and introducing biological enemies as well as practical solutions for better crop protection for outdoor and protected crops.</p>
+                    
+                    <p>Observing and facing lots of challenges while working in the field of crops and crop protection encouraged my curiosity towards things and made me questioning what is happening inside, at the Molecular Level? This question have shifted me from dreaming to be a traditional professional agronomist, to aiming to be a researcher in the field of crop protection and work in the applied research for real-world solutions, that will contribute to better agricultural solutions, and eventually, more food-secure world.</p>
+                    
+                    <p>This passion and curiosity made me fly to the UK and do an MSc in Plant Biotechnology and Enterprise, focusing on plant-pathogen interaction, after securing a fully-funded scholarship at Durham University.</p>
+                    
+                    <p>Currently, I am working as a research analyst for testing the efficacy and ecotoxicology of plant protection products, especially biopesticides.</p>
             </section>
             <section>
                 <h3>Educational Excellence</h3>
-                <p>Won the highly-competitive DPET scholarship to do MSc in Plant Biotechnology and Enterprise at Durham University. This scholarship covered the tuition fees, lab bench money, and all life expenses for my time in Durham.</p>
-                <p>The course involved 5 taught modules in addition to an extensive research project, in which I spent 6 months working full-time in a well-established molecular biology and biochemistry lab.</p>
-                <p>I got a distinction for my research project and a merit for the degree.</p>
-                <p>2017-2020 horticulture and agronomy, with focus on plant pathology (downy mildew on cucumber) and pest management.</p>
-                <p>During those three years, I have been participating in workshops, touring farms.</p>
+                <p>I studied BSc in Plant Production and Protection at the top university in Palestine, and I was honoured by the university as the top of my class at graduation in 2020. During my undergraduate degree, I was a proactive student, linked with several researcher at the university, as well as my links with farmers, agronomists, and agronomy companies. I was chosen by the department dean office to participate in two research projects (See Projects section 2019-2020), which were my first two research participation opportunities, and from there, my journey in research started, and I do not hope it will end! During my undergraduate years, I participated in several conferences, workshops, farming tours, business tours, and much more. I was also volunteering as a touring guide to introduce schools students and visitors to the facilities of the Department of Agriculture.</p>
+
+                    <p>Further to my passion towards research and science, I did my best to win the highly-competitive DPET scholarship to do an MSc in Plant Biotechnology and Enterprise at Durham University. This scholarship covered the tuition fees, lab bench money, and all life expenses for my time in Durham.</p>
+                    
+                    <p>The course involved 5 taught modules, which were: Technologies in Biosciences, Bioinformatics and Data Science, Frontiers in Plant Science, Innovation and Technology Management, and Agriculture and Biotechnology, in addition to an extensive research project, in which I spent 6 months working full-time in a well-established molecular biology and biochemistry lab. eventually, I got a distinction for my research project and a merit for the degree, and wide experience in plant molecular biology to add to my wallet.</p>
             </section>
             <section>
                 <h3>Research Experience</h3>
-                <p>Experienced in conducting research using molecular biology and biochemistry techniques, including but not limited to PCR, gene-cloning, animal and plant gene and protein expression techniques along with antibody work including immunoblotting and confocal microscopy.</p>
-                <p>“My research project was focused on the plant-pathogen interaction by studying post-translational modifications of a pattern recognition receptor called CERK1, which is responsible for the detection of pathogenic fungus by detecting chitin. Arabidopsis thaliana was used as a model plant and botrytis cinerea was used as a model fungus. The research findings were interesting as they contribute to the gap in the field of pathogen detection by plant cell, and will be published as soon as the rest of the work is done by current lab members (expected mid 2025)”</p>
-                <p>Worked for 8 months in consulting and conducted three research-based projects in the fields of rural development, agribusiness, and public health.</p>
+                <p>I participated in conducting two main research projects in the fields of crop science, environmental research, and supporting rural farmers during my undergraduate studies with two research institutes, three main research projects in the fields of rural development, agribusiness, and public health with Pillars Consulting in 2022, an 8-month lab-based research project at Durham University, and continuing into my research journey with i2L Research, answering questions regarding the efficacy of newly-found pesticides and agrochemicals.</p>
+                <p>I have extensive experience in scientific research, although most of my work has primarily been for private companies and institutes, which is why I do not have any publications. Despite this, I am confident in my ability to contribute to academic research.
+
+                    During my time at the Department of Bioscience, Durham University, I gained experience in conducting research using molecular biology and biochemistry techniques, including but not limited to PCR, gene-cloning, animal and plant gene and protein expression techniques along with antibody work including immunoblotting and confocal microscopy. </p>
+                <p>My research project at Durham University was focused on the plant-pathogen interaction by studying post-translational modifications of a pattern recognition receptor, called CERK1, which is responsible protein for the detection of pathogenic fungus by perceiving chitin. Arabidopsis thaliana was used as a model plant and botrytis cinerea was used as a model fungus. The research findings contribute to the gap in the field of pathogen detection by plant cell, and will be published as soon as the rest of the work on that project is done by current lab members at Ari Sadanandom’s Lab (expected mid 2025).</p>
             </section>
             <section>
                 <h3>Practical Experience</h3>
-                <p>Practical experience details here...</p>
+                <p>During my years doing my BSc degree, I enjoyed linking with farmers, agronomists, and agricultural companies, which gave me the chance to get a training every summer in a different place as the following table explains:</p>
             </section>
             <section>
                 <h3>Clients</h3>
                 <p>i2L Research</p>
-                <p>Durham University</p>
                 <p>Pillars Consulting</p>
                 <p>Burj Agristore</p>
                 <p>Midlands Farm</p>
@@ -75,6 +182,7 @@
             </section>
         </div>
     </main>
+    
     <footer>
         <p>&copy; 2024 The Aestivum Lab</p>
     </footer>
