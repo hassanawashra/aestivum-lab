@@ -38,6 +38,26 @@
         }
     </style>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+            gap: 20px; /* Space between grid items */
+        }
+        .client {
+            text-align: center; /* Center-aligns the content */
+        }
+        .client img {
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 10px; /* Space between logo and text */
+        }
+        .large-title {
+            font-size: 1.5em; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            margin-top: 20px; /* Space above the title */
+        }
+    </style>
 </head>
 <body>
     
@@ -98,14 +118,38 @@
             </section>
             <section>
                 <h3>Clients</h3>
-                <p>i2L Research</p>
-                <p>Pillars Consulting</p>
-                <p>Burj Agristore</p>
-                <p>Midlands Farm</p>
-                <p>75+ small farmers and gardeners</p>
-                <p>PADRIFF</p>
-                <p>UAWC</p>
-                <p>ARIJ</p>
+                <div class="clients-grid">
+                    <div class="client">
+                        <img src="pics/i2lresearch.jpg" alt="i2L Research Logo">
+                        <p>i2L Research</p>
+                    </div>
+                    <div class="client">
+                        <img src="pics/pillars_consulting.jpg" alt="Pillars Consulting Logo">
+                        <p>Pillars Consulting</p>
+                    </div>
+                    <div class="client">
+                        <img src="pics/burj.agristore.jpg" alt="Burj Agristore Logo">
+                        <p>Burj Agristore</p>
+                    </div>
+
+                    <div class="client">
+                        <img src="pics/padriff.jpg" alt="PADRIFF Logo">
+                        <p>PADRIFF</p>
+                    </div>
+                    <div class="client">
+                        <img src="pics/UAWC.jpg" alt="UAWC Logo">
+                        <p>UAWC</p>
+                    </div>
+                    <div class="client">
+                        <img src="pics/ARIJ.jpg" alt="ARIJ Logo">
+                        <p>ARIJ</p>
+                    </div>
+
+
+                    <div class="client">
+                        <p class="large-title">75+ Small Farmers and Gardeners</p>
+                    </div>
+                </div>
             </section>
             <section>
                 <h3>Projects</h3>
@@ -115,24 +159,54 @@
                         <th>Project Details</th>
                     </tr>
                     <tr>
-                        <td>Anza Wastewater Treating Unit, 2023, Jenin, West Bank</td>
-                        <td>Studying the effects of using treated wastewater on the yield and crop quality of olives and forage crops, as well as the effects on society from ethical and economical perspectives.</td>
+                        <td>Applied Research Institute - Jerusalem, 2019-2020, West Bank, Palestine/td>
+                        <td>Studying the technical (qualitative and quantitative), environmental, economical, and ethical effects of using treated wastewater for irrigating olives and forage crops.</td>
                     </tr>
                     <tr>
-                        <td>PADRRIF, 2023, West Bank</td>
-                        <td>Studying the disasters and risks that small farmers face in rural areas, and informing them about the fundings and compensations provided by PADRRIF.</td>
+                        <td>PADRRIF & UAWC, 2020, North of West Bank, Palestine</td>
+                        <td>Conducted a research for studying the disasters and risks face small farmers in rural areas, and establishing an awareness initiative to inform farmers regarding fundings and compensation schemes offered by the Palestinian Disaster Risk Reduction and Insurance Fund.</td>
                     </tr>
                     <tr>
-                        <td>PARC and Pillars Consulting, 2024, Village Name</td>
-                        <td>Preparing a social and economical study for introducing a new system for managing municipal wastes and introducing recycling and composting units.</td>
+                        <td>An-najah National University, 2020</td>
+                        <td>Biology and management of downy mildew disease on cucumber grown under plastic-house conditions</td>
                     </tr>
                     <tr>
-                        <td>Ministry of Agriculture under Pillars Consulting, 2024, Kufr Dan, West Bank</td>
-                        <td>Preparing a feasibility study for establishing a fruits and vegetables storage unit in the north of the West Bank.</td>
+                        <td>Agricultural Development Association & Pillars Consulting, 2022, Ramallah, West Bank, Palestine</td>
+                        <td>Conducted a technical, economical, and social study for introducing a new system for managing municipal wastes and introducing a recycling and composting units in a rural village.</td>
                     </tr>
                     <tr>
-                        <td>Institute of Community and Public Health, Birzeit University, 2024</td>
-                        <td>Conducted research on how fruits and vegetables consumption is related to the prevalence of non-communicable diseases.</td>
+                        <td>The Ministry of Agriculture & Pillars Consulting, 2022, West Bank, Palestine</td>
+                        <td>Prepared a feasibility study for establishing fruits and vegetables storage unit for the use of farmers in the rural areas in the north of the West Bank.</td>
+                    </tr>
+                    <tr>
+                        <td>The Institute of Community and Public Health at Birzeit University & Pillars Consulting, 2022, Ramallah, West Bank, Palestine</td>
+                        <td>Conducted a research for studying the relationship between the consumption of fruit and vegetables and the commonness of non-communicable diseases among 2000 studied families in Palestine.</td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Durham, 2023</td>
+                        <td>Prepared a review research investigating the mode of action of Adepidyn(tm), produced by Syngenta, which is a broad-spectrum fungicide, and its efficacy against different fungal diseases. The review also studied the business model of Syngenta company after visiting their research site in Bracknell, UK.</td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Durham, 2023</td>
+                        <td>Prepared a review research investigating the process of producing Zerose
+                            (r), produced by Cargill, also known as erythritol, which is a zero-calories sugar. The review also studied the business model of Cargill company and possible improvements of the processing by introducing biotechnological techniques.</td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Durham, 2023</td>
+                        <td>Studied the business model and business plan of a vertical farm under the University of York, named Grow It York. The study also included a review of LettUs Grow aeroponic technology, which is an improved irrigation technology.</td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Durham, 2023</td>
+                        <td>Prepared a business model analysis of Procter and Gamble company after a field visit for their site in Newcastle, UK. Studied Amylase detergent, a key detergent used in their products, and the processes behind its production at the bacterial level, as well as searched for plant-based sources for amylase.</td>
+                    </tr>
+
+                    <tr>
+                        <td>University of Durham, 2023</td>
+                        <td>Analysis of RNA-seq of Arabidposis thaliana with and without ETT mutation using R.</td>
                     </tr>
                     <!-- Add more rows here as needed -->
                 </table>
