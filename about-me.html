@@ -36,6 +36,90 @@
             font-weight: bold; /* Make the font bold */
             margin: 0;
         }
+
+        .summary-title {
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark grey text */
+            padding: 10px 15px; /* Padding around the text */
+            margin: 10px 0; /* Space above and below the box */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+            display: block; /* Ensure it takes up the full width */
+            cursor: pointer; /* Indicates this is clickable */
+        }
+
+        details summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensures content is spaced between */
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold; /* Make the text bold */
+            padding: 10px 15px; /* Add padding to ensure space around text and triangle */
+        }
+
+        details summary::-webkit-details-marker {
+            display: none; /* Hide the default arrow */
+        }
+
+        details summary::after {
+            content: '▼'; /* Triangle pointing down */
+            font-size: 1.5em; /* Adjust size as needed */
+            color: #333; /* Match the color of the text */
+            margin-left: auto; /* Pushes the triangle to the right */
+            transition: transform 0.3s ease; /* Smooth transition for rotation */
+        }
+
+        details[open] summary::after {
+            content: '▲'; /* Triangle pointing up when details are open */
+            transform: rotate(0deg); /* Rotate back if needed */
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse; /* Ensures that the border is seen as one single line instead of double */
+            width: 100%; /* Optional: ensures the table takes the full width of its container */
+        }
+        th, td {
+            border: 1px solid black; /* Adds border to table cells */
+            padding: 8px; /* Adds space between the text and the borders of the cells */
+            background-color: #fff; /* Set default background to white for all cells */
+        }
+
+        th {
+            background-color: #b5c99a; Light olive green background for header cells
+        }
+
+        .clients-grid table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .clients-grid th, .clients-grid td {
+            border-left: transparent;
+            border-right: transparent;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .clients-grid tr:first-child td {
+            border-top: none;
+        }
+
+        .clients-grid tr:last-child td {
+            border-bottom: none;
+        }
+
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -48,8 +132,8 @@
             text-align: center; /* Center-aligns the content */
         }
         .client img {
-            width: 100px; /* Adjust size as needed */
-            height: auto;
+            width: auto; /* Adjust size as needed */
+            height: 80px;
             margin-bottom: 10px; /* Space between logo and text */
         }
         .large-title {
@@ -66,7 +150,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="plant-protection.html">Plant Protection</a></li>
+                    <!-- <li><a href="plant-protection.html">Plant Protection</a></li> -->
                     <li><a href="about-me.html">About Me</a></li>
                     <li><a href="get-in-touch.html">Get in Touch</a></li>
                 </ul>
@@ -78,33 +162,31 @@
     </header>
     
     <main>
-        <div class="card">
-            <h2>About Me</h2>
+        <div class="card">            
             <section>
                 <details>
-                    <summary><h3>Background: Why Agronomy?</h3></summary>
-                    <p>I came from a developing country that relies on imports to supply the community with essential food, which made me concerned about the future food security for developing countries with limited resources. Moreover, climate change, pests' resistance to pesticides, and other environmental challenges are threatening the stability of food security for all countries.</p>
-                    <p>As a result, I chose to be part of the agricultural sector, trying to contribute to improving food security levels by helping the production meet the consumption. I was part of several research projects done for developing the agricultural sector in rural areas (see Projects section).</p>
-                    <p>During my undergraduate years, I was building my profile and experience in pest management and irrigation solutions, and advertising my experience to local farmers, which eventually led me to start a small business (Burj for Agricultural Solutions) where I did trading for agricultural products, and provided paid/free consultancy services for local farmers, as well as providing solutions for challenges facing farmers with their crops.</p>
-                    <p>I also worked for 1 year as an agronomist in an aquaponic farm, using minimal chemical pesticides and introducing biological enemies as well as practical solutions for better crop protection for outdoor and protected crops.</p>
+                    <summary class="summary-title"><h3>Background: Why Agronomy?</h3></summary>
+                    <p>Coming from a developing country that relies on imports to supply the community with essential food made me concerned about the future food security for developing countries with limited resources. Moreover, climate change, pests' resistance to pesticides, and other environmental challenges are threatening the stability of food security for all countries.</p>
+                    <p>I chose to be part of the agricultural sector, trying to contribute to improving food security levels by helping the production meet consumption. I was part of several research projects done for developing the agricultural sector in rural areas (see Projects section).</p>
+                    <p>During my undergraduate years, I was building my experience in pest management and irrigation solutions, and publicising my experience to local farmers, which eventually led me to start a small business (Burj for Agricultural Solutions) where I traded for agricultural products, and provided paid/free consultancy services for local farmers, as well as providing solutions for challenges facing farmers with their crops.</p>
                     <p>Observing and facing lots of challenges while working in the field of crops and crop protection encouraged my curiosity towards things and made me question what is happening inside, at the Molecular Level. This question has shifted me from dreaming of being a traditional professional agronomist to aiming to be a researcher in the field of crop protection and work in the applied research for real-world solutions, that will contribute to better agricultural solutions, and eventually, a more food-secure world.</p>
-                    <p>This passion and curiosity made me fly to the UK and do an MSc in Plant Biotechnology and Enterprise, focusing on plant-pathogen interaction, after securing a fully-funded scholarship at Durham University.</p>
-                    <p>Currently, I am working as a research analyst for testing the efficacy and ecotoxicology of plant protection products, especially biopesticides.</p>
+                    <p>This curiosity made me fly to the UK and do an MSc in Plant Biotechnology and Enterprise, focusing on plant-pathogen interaction, after securing a fully-funded scholarship at Durham University.</p>
+                    <p>Currently, I am working as a research analyst for testing the efficacy and ecotoxicology of plant protection products, especially biopesticides, on arable crops.</p>
                 </details>
             </section>
             <section>
                 <details>
-                    <summary><h3>Educational Excellence</h3></summary>
+                    <summary class="summary-title"><h3>Educational Excellence</h3></summary>
                     <p>I studied BSc in Plant Production and Protection at the top university in Palestine, and I was honoured by the university as the top of my class upon graduation in 2020. During my undergraduate degree, I was a proactive student, linked with several researchers at the university, as well as my links with farmers, agronomists, and agronomy companies. I was chosen by the department dean's office to participate in two research projects (See Projects section), which were my first two research participation opportunities, from there, my journey in research started, and I do not hope it will end! During my undergraduate years, I participated in several conferences, workshops, farming tours, business tours, and much more. I was also volunteering as a touring guide to introduce school students and visitors to the facilities of the Department of Agriculture.</p>
 
                     <p>Further to my passion towards research and science, I did my best to win the highly competitive DPET scholarship to do an MSc in Plant Biotechnology and Enterprise at Durham University. This scholarship covered the tuition fees, lab bench money, and all life expenses for my time in Durham.</p>
                     
-                    <p>The course involved 5 taught modules, which were: Technologies in Biosciences, Bioinformatics and Data Science, Frontiers in Plant Science, Innovation and Technology Management, and Agriculture and Biotechnology, in addition to an extensive research project, in which I spent 6 months working full-time in a well-established molecular biology and biochemistry lab. eventually, I got a distinction for my research project and a merit for the degree, and wide experience in plant molecular biology to add to my wallet.</p>
+                    <p>The course involved 5 taught modules, which were: Technologies in Biosciences, Bioinformatics and Data Science, Frontiers in Plant Science, Innovation and Technology Management, and Agriculture and Biotechnology, in addition to an extensive research project, in which I spent 6 months working full-time in a well-established molecular biology and biochemistry lab. Eventually, I got a distinction for my research project and a merit for the degree, and wide experience in plant molecular biology to add to my wallet.</p>
                 </details>
             </section>
             <section>
                 <details>
-                    <summary><h3>Research Experience</h3></summary>
+                    <summary class="summary-title"><h3>Research Experience</h3></summary>
                     <p>I participated in conducting two main research projects in the fields of crop science, environmental research, and supporting rural farmers during my undergraduate studies with two research institutes, three main research projects in the fields of rural development, agribusiness, and public health with Pillars Consulting in 2022, an 8-month lab-based research project at Durham University, and continuing into my research journey with i2L Research, answering questions regarding the efficacy of newly-found pesticides and agrochemicals.</p>
                     <p>I have extensive experience in scientific research, although most of my work has primarily been for private companies and institutes, which is why I do not have any publications. Despite this, I am confident in my ability to contribute to academic research.
 
@@ -114,29 +196,55 @@
             </section>
             <section>
                 <details>
-                    <summary><h3>Practical Experience</h3></summary>
+                    <summary class="summary-title"><h3>Practical Experience</h3></summary>
                     <p>During my years doing my BSc degree, I enjoyed linking with farmers, agronomists, and agricultural companies, which gave me the chance to get training every summer in a different place as the following table explains:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Training Provider</th>
+                                <th>Training</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2018 Summer</td>
+                                <td>Hazera Seeds</td>
+                                <td>Trained on the cultural practices of protected cucumbers and tomatoes, including choosing the varieties, land preparation, growing practices, nutrition programmes, and pest management</td>
+                            </tr>
+                            <tr>
+                                <td>2019 Summer</td>
+                                <td>Saffarini Garden Centre</td>
+                                <td>Trained on the basics of managing the ornamental nurseries, from growing of the seeds to care and marketing</td>
+                            </tr>
+                            <tr>
+                                <td>2020 Summer</td>
+                                <td>Al Juneidi Nurseries</td>
+                                <td>Trained on growing and caring of horticultural seedlings and learned different grafting techniques of fruit trees</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </details>
             </section>
             <section>
                 <details>
-                    <summary><h3>Projects</h3></summary>
+                    <summary class="summary-title"><h3>Projects</h3></summary>
                     <table>
                         <tr>
                             <th>Organization, Year, Location</th>
                             <th>Project Details</th>
                         </tr>
                         <tr>
-                            <td>Applied Research Institute - Jerusalem, 2019-2020, West Bank, Palestine/td>
-                            <td>Studying the technical (qualitative and quantitative), environmental, economic, and ethical effects of using treated wastewater for irrigating olives and forage crops.</td>
+                            <td>Applied Research Institute - Jerusalem, 2019-2020, West Bank, Palestine
+                            <td>Studied the technical (qualitative and quantitative), environmental, economic, and ethical effects of using treated wastewater for irrigating olives and forage crops.</td>
                         </tr>
                         <tr>
                             <td>PADRRIF & UAWC, 2020, North of West Bank, Palestine</td>
-                            <td>Conducted research for studying the disasters and risks facing small farmers in rural areas, and establishing an awareness initiative to inform farmers regarding fundings and compensation schemes offered by the Palestinian Disaster Risk Reduction and Insurance Fund.</td>
+                            <td>Conducted research for studying the disasters and risks facing small farmers in rural areas, and establishing an awareness initiative to inform farmers regarding funding and compensation schemes offered by the Palestinian Disaster Risk Reduction and Insurance Fund.</td>
                         </tr>
                         <tr>
-                            <td>An-najah National University, 2020</td>
-                            <td>Biology and management of downy mildew disease on cucumber grown under plastic-house conditions</td>
+                            <td>An-Najah National University, 2020</td>
+                            <td>Studied the biology and management of downy mildew disease on cucumber grown under plastic-house conditions</td>
                         </tr>
                         <tr>
                             <td>Agricultural Development Association & Pillars Consulting, 2022, Ramallah, West Bank, Palestine</td>
@@ -181,55 +289,54 @@
                 </details>
             </section>
             <section>
-                <h3>Clients</h3>
+                <h2><strong>Clients</strong></h3>
                 <div class="clients-grid">
                     <div class="client">
                         <img src="pics/i2lresearch.jpg" alt="i2L Research Logo">
-                        <p>i2L Research</p>
+                        <p><strong>i2L Research</strong></p>
                     </div>
                     <div class="client">
                         <img src="pics/pillars_consulting.jpg" alt="Pillars Consulting Logo">
-                        <p>Pillars Consulting</p>
+                        <p><strong>Pillars Consulting</strong></p>
                     </div>
                     <div class="client">
                         <img src="pics/burj.agristore.jpg" alt="Burj Agristore Logo">
-                        <p>Burj Agristore</p>
+                        <p><strong>Burj Agristore</strong></p>
                     </div>
 
                     <div class="client">
                         <img src="pics/padriff.jpg" alt="PADRIFF Logo">
-                        <p>PADRIFF</p>
+                        <p><strong>PADRIFF</strong></p>
                     </div>
                     <div class="client">
                         <img src="pics/UAWC.jpg" alt="UAWC Logo">
-                        <p>UAWC</p>
+                        <p><strong>UAWC</strong></p>
                     </div>
                     <div class="client">
                         <img src="pics/ARIJ.jpg" alt="ARIJ Logo">
-                        <p>ARIJ</p>
+                        <p><strong>ARIJ</strong></p>
                     </div>
 
                     <div class="client">
                         <img src="pics/Birzeit University2.png" alt="Birzeit Logo">
-                        <p>Birzeit University</p>
+                        <p><strong>Birzeit University</strong></p>
                     </div>
 
 
                     <div class="client">
                         <img src="pics/icph-logo.png" alt="ICPH Logo">
-                        <p>Institue of Community and Public Health</p>
+                        <p><strong>Institue of Community and Public Health</strong></p>
                     </div>
 
                     <div class="client">
                         <img src="pics/aman-logo1.png" alt="AMAN Logo">
-                        <p>Aman Transparency Palestine</p>
+                        <p><strong>Aman Transparency Palestine</strong></p>
                     </div>
 
-
-                    <div class="client">
+                    <div class="client centered-content">
                         <p class="large-title">150+ Small Farmers and Gardeners in the West Bank</p>
                     </div>
-                </div>
+                    
             </section>
 
         </div>
