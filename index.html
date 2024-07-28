@@ -19,11 +19,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: transparent; /* Make text transparent */
             text-align: center;
-            background-color: transparent; /* Remove grey background */
             padding: 20px;
             border-radius: 10px;
+            width: 90%; /* Ensure it doesn't overflow on small screens */
+            box-sizing: border-box; /* Include padding in width calculation */
+            color: transparent; /* Make text transparent */
+            background-color: transparent; /* Remove grey background */
             text-shadow: 
                 -1px -1px 0 #f5f5f5,  
                  1px -1px 0 #f7f7f7,
@@ -33,11 +35,62 @@
             animation: fadeIn 2s ease-out;
             }
         .hero-text h1 {
-            font-size: 4em; /* Increase font size */
+            font-size: 2.5em; /* Adjust base size */
             font-weight: bold; /* Make the font bold */
             margin: 0;
             animation: pulse 2s infinite;
             }
+        .hero-text p {
+            font-size: 1em; /* Adjust base size */
+            letter-spacing: 2px; /* Reduce letter spacing on smaller screens */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2em; /* Smaller font size on tablets */
+            }
+            .hero-text p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5em; /* Even smaller font size on phones */
+            }
+            .hero-text p {
+                font-size: 0.8em;
+            }
+        }
+
+        /* New styles for references */
+        .references {
+            background-color: #f9f9f9; /* Light grey background */
+            padding: 20px; /* Padding around the content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+            margin-top: 20px; /* Space above the section */
+        }
+        .references h3 {
+            color: #333; /* Dark grey color for the heading */
+            margin-bottom: 10px; /* Space below the heading */
+        }
+        .references ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+        }
+        .references li {
+            margin-bottom: 8px; /* Space between list items */
+        }
+        .references a {
+            color: #0066cc; /* Blue color for links */
+            text-decoration: none; /* No underline */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+        .references a:hover {
+            color: #ff6600; /* Orange color on hover */
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -48,14 +101,14 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="plant-protection.html">Plant Protection</a></li>
+                    <!-- <li><a href="plant-protection.html">Plant Protection</a></li> -->
                     <li><a href="about-me.html">About Me</a></li>
                     <li><a href="get-in-touch.html">Get in Touch</a></li>
                 </ul>
             </nav>
             <div class="hero-text">
                 <h1><span style="font-weight: normal; display: block; color: black;">Welcome to</span> The Aestivum Lab</h1>
-                <p><span style="font-family: 'Poppins', sans-serif; font-weight: 30; font-size: 1.1em; letter-spacing: 4px;">Exploring the intersection of agronomy, plant protection, molecular biology, and food security</span></p>
+                <p><span style="font-family: 'Poppins', sans-serif; font-weight: 30; font-size: 1.1em; letter-spacing: 4px;">Exploring the intersection of plant protection, molecular biology, agricultural sensing,and food security</span></p>
             </div>
         </div>
     </header>
@@ -65,31 +118,31 @@
             <h2>Food Security</h2>
             <img src="pics/food-sec.jpg" alt="Food Security Image">
             <h3>Importance of Food Security for the Community</h3>
-            <p>Food security of a community is defined as the physical and economical ability of that community to access sufficient safe and nutritious food required for the metabolism of the human body for a healthy life (World bank and Global Food Security Programme).</p>
+            <p>Food security of a community is defined as the physical and economic ability of that community to access sufficient safe and nutritious food required for the metabolism of the human body for a healthy life (World Bank and Global Food Security Programme).</p>
             <p>Food security could be threatened by:</p>
             <ul>
-                <li>Lack of the essential food</li>
-                <li>Physical distances of the food source and the consumer</li>
-                <li>Economical situation that prevents people from affording available food</li>
+                <li>Lack of essential food</li>
+                <li>Physical distances between the food source and the consumer</li>
+                <li>The economic situation that prevents people from affording available food</li>
                 <li>Mis-distribution of the available food</li>
             </ul>
-            <p>Any threat on the previous aspects is also considered as a form of food insecurity (World bank).</p>
-            <p>April 2024: millions of people live in countries labelled as "Hunger Hotspots" where lives are threatened due to the lack of essential food needed for a healthy life (Action Against Hunger).</p>
+            <p>Any threat in the previous aspects is also considered a form of food insecurity (World Bank).</p>
+            <p>In April 2024: millions of people live in countries labelled as "Hunger Hotspots" where lives are threatened due to the lack of essential food needed for a healthy life (Action Against Hunger).</p>
         </div>
         <div class="card">
             <img src="pics/plantsand.jpg" alt="Plants and Food Security Image">
             <h2>Plants and Food Security</h2>
             <h3>How Plants are Essential for Food Security</h3>
             <p>Plants are the main provider of human food by 80%, and the key source of livestock fodder, making them the most important player in food security (Rizzo et al; 2021).</p>
-            <p>To be specific, wheat, rice, and maize provide food for over half of the world population (MIT News).</p>
-            <p>This importance has made plants to be the main concern for us here at the Aestivum Lab, focusing on crop health and protection.</p>
+            <p>Specifically, wheat, rice, and maize provide food for over half of the world's population (MIT News).</p>
+            <p>This importance has made plants the main concern for us here at the Aestivum Lab, focusing on crop health and protection.</p>
         </div>
         <div class="card">
             <img src="pics/pestm.jpg" alt="Crop Protection Image">
             <h2>Crop Protection and Food Security</h2>
-            <p>Plants pests and diseases affect the amount and quality of the available food for human consumption and use. Pest infestations have been threatening the health of essential crops needed for human and livestock consumption. The loss of these essential crops may reach to 30% of the crop, thus, threatening the food security stability (Rizzo et al; 2021).</p>
+            <p>Plant pests and diseases affect the amount and quality of the available food for human consumption and use. Pest infestations have been threatening the health of essential crops needed for human and livestock consumption. The loss of these crucial crops may reach to 30% of the crop, thus, threatening the food security stability (Rizzo et al; 2021).</p>
             <p>Severe diseases caused by microorganisms can cause crop loss by 30-90% of cereal crops, vegetables, fruits, and others. (Aroca and García, 2023)</p>
-            <p>The FAO have reported that 20-40% of the global crop production is being lost due to crop pest infestation annually. As a result, crop protection is indispensable for increasing their productivity, reducing plant mortality, and ensuring the best quality of plant products (Croplife).</p>
+            <p>The FAO has reported that 20-40% of the global crop production is being lost due to crop pest infestation annually. As a result, crop protection is indispensable for increasing their productivity, reducing plant mortality, and ensuring the best quality of plant products (CropLife).</p>
             <p>Increased crop protection results in reduced crop loss, hence, increased Food Security.</p>
         </div>
         <div class="card">
@@ -100,16 +153,16 @@
                 <li>Understanding pathogen-cell interaction</li>
                 <li>Developing disease-resistant crops</li>
                 <li>Resistance gene identification and cloning</li>
-                <li>Exploring possibilities for in the native species for improving arable crops' resistance</li>
+                <li>Exploring possibilities in the native species for improving arable crops' resistance</li>
                 <li>Speeding up the processes of plant breeding</li>
                 <li>Natural AI identification and development</li>
                 <li>Marker-Assisted Breeding</li>
-                <li>Advancing techniques in diseases early detection and diagnosis</li>
+                <li>Advancing techniques in disease early detection and diagnosis</li>
             </ul>
         </div>
     </main>
     
-    <section>
+    <section class="references">
         <h3>References</h3>
         <ul>
             <li><a href="https://www.worldbank.org/en/topic/agriculture/brief/food-security-update/what-is-food-security">World Bank</a></li>
@@ -119,8 +172,6 @@
             <li><a href="https://news.mit.edu/2022/how-molecular-biology-could-reduce-global-food-insecurity-0329">MIT News</a></li>
             <li><a href="https://croplife.org/our-ambitions/increasing-food-security/#:~:text=Benefits of Crop Protection&text=FAO estimates that annually between,impact on global food security">Croplife</a></li>
             <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10575696/">Aroca and García, 2023</a></li>
-
-
         </ul>
     </section>
     <footer>
