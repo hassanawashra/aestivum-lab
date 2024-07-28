@@ -1,144 +1,211 @@
 body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arima Madurai', cursive;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Arima Madurai', cursive;
+    background-color: #f5f5f5;
 }
 
+header {
+    position: relative;
+    text-align: center;
+    color: white;
+}
 
-        .hero-text p {
-            font-size: 1.2em;
-            color: white;
-            margin: 0;
-        }
+@keyframes pulse {
+0%, 100% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+}
 
-        nav {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+@keyframes fadeInSlideIn {
+    from {opacity: 0; transform: translateX(-100px);}
+    to {opacity: 1; transform: translateX(0);}
+}
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background */
-        }
+.hero-text p {
+    font-size: 1.2em;
+    color: white;
+    margin: 0;
+}
 
-        nav ul li {
-            float: left;
-        }
+.hero-text h1 {
+    animation: fadeInSlideIn 3s ease-out;
+}
 
-        nav ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-        nav ul li a:hover {
-            background-color: #111;
-        }
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background */
+}
 
-        main {
-            padding: 20px;
-        }
+nav ul li {
+    float: left;
+}
 
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-            transition: transform 0.2s;
-            overflow: hidden; /* Ensure the content doesn't overflow */
-        }
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-        .card img {
-            width: 40%; /* Adjust the width of the image */
-            float: right; /* Float the image to the right */
-            margin-left: 20px; /* Add some margin for spacing */
-            border-radius: 10px; /* Add border radius to match the card */
-        }
+nav ul li a:hover {
+    background-color: #111;
+}
 
-        .card:hover {
-            transform: scale(1.02);
-        }
+main {
+    padding: 20px;
+}
 
-        .card h2 {
-            margin-top: 10px;
-            color: #333;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+    overflow: hidden; /* Ensure the content doesn't overflow */
+}
 
-        .card h3 {
-            margin-top: 5px;
-            color: #555;
-            font-weight: normal;
-        }
+.card img {
+    width: 40%; /* Adjust the width of the image */
+    float: right; /* Float the image to the right */
+    margin-left: 20px; /* Add some margin for spacing */
+    border-radius: 10px; /* Add border radius to match the card */
+}
 
-        .card p {
-            color: #666;
-            line-height: 1.6;
-        }
+.card:hover {
+    transform: scale(1.02);
+}
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
+.card h2 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+.card h3 {
+    margin-top: 5px;
+    color: #555;
+    font-weight: normal;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 form {
-            display: flex;
-            flex-direction: column;
-        }
+    display: flex;
+    flex-direction: column;
+}
 
-        form label {
-            margin-top: 10px;
-        }
+form label {
+    margin-top: 10px;
+}
 
-        form input, form textarea {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-        form input[type="submit"] {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
-        form input[type="submit"]:hover {
-            background-color: #555;
-        }
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures three columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.client {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px; /* Space between logo and text */
+}
+
+.large-title {
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    margin-top: 20px; /* Space above the title */
+    text-align: center; /* Center text */
+    width: 100%; /* Ensure it spans the full width */
+    display: block; /* Ensures the element behaves as a block-level element */
+}
+
+p.special-text {
+    font-size: 1.5em; /* Adjust size as needed */
+    font-weight: bold;
+    color: black;
+}
+
+details summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns content to the right end */
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::after {
+    content: '▼';
+    font-size: 1.5em;
+    color: #808000; /* Olive green color for the triangle when closed */
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    content: '▲'; /* Triangle pointing up when details are open */
+    color: #808000; /* Olive green color for the triangle when open */
+}
