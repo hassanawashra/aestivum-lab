@@ -140,6 +140,24 @@
             font-weight: bold; /* Bold text */
             margin-top: 20px; /* Space above the title */
         }
+        @media (max-width: 768px) {
+            .clients-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+            .client {
+                flex: 0 0 auto;
+                width: 200px;
+                scroll-snap-align: start;
+                margin-right: 20px;
+            }
+            .client:last-child {
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
