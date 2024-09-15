@@ -102,7 +102,7 @@
                 <ul>
                     <li><img src="pics/aestivumlogo.png" alt="Aestivum Lab Logo" height="45px" width="auto"></li>
                     <li><a href="index.html">Home</a></li>
-<li><a href="agricultural-sensing></a></li>
+                    <li><a href="agricultural-sensing></a></li>
                     <li><a href="about-me.html">About Me</a></li>
                     <li><a href="get-in-touch.html">Get in Touch</a></li>
                 </ul>
@@ -125,18 +125,6 @@
             </ul>
         </div>
     </main>
-    
-    <section class="references">
-        <h3>References</h3>
-        <ul>
-            <li><a href="https://www.worldbank.org/en/topic/agriculture/brief/food-security-update/what-is-food-security">World Bank</a></li>
-            <li><a href="https://www.foodsecurity.ac.uk/challenge/">Global Food Security Programme</a></li>
-            <li><a href="https://www.actionagainsthunger.org.uk/our-impact/stories/the-hungriest-countries-in-the-world">Action Against Hunger</a></li>
-            <li><a href="https://onehealthoutlook.biomedcentral.com/articles/10.1186/s42522-021-00038-7#:~:text=8,9].-,Plants%20provide%20over%2080%%20of%20the%20food%20consumed%20by%20humans,societies%20[7,%2010].">Rizzo et al; 2021</a></li>
-            <li><a href="https://news.mit.edu/2022/how-molecular-biology-could-reduce-global-food-insecurity-0329">MIT News</a></li>
-            <li><a href="https://croplife.org/our-ambitions/increasing-food-security/#:~:text=Benefits of Crop Protection&text=FAO estimates that annually between,impact on global food security">Croplife</a></li>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10575696/">Aroca and García, 2023</a></li>
-        </ul>
     </section>
     <footer>
         <p><img src="pics/aestivumlogo.png" alt="Aestivum Lab Logo" height="75px" width="auto"></p>
