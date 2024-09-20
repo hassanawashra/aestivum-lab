@@ -36,10 +36,29 @@ transform: scale(1.1);
 }
 
 nav {
-    position: absolute;
+    position: fixed; /* Keep the navbar fixed */
+    top: 0; /* Sticks it to the top of the viewport */
+    width: 100%; /* Full width for the navbar */
+    background-color: rgba(51, 51, 51, 0.8); /* Unified background color */
+    z-index: 1000; /* Stays above other content */
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.sidebar {
+    position: fixed; /* Fixed position for the sidebar */
     top: 0;
-    width: 100%;
-    z-index: 1000;
+    left: -250px; /* Hide off-screen */
+    width: 250px; /* Width of the sidebar */
+    height: 100%; /* Full height */
+    background-color: rgba(51, 51, 51, 0.9); /* Background color */
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: 999; /* Below the navbar */
+}
+
+.sidebar.active {
+    left: 0; /* Show sidebar */
 }
 
 nav ul {
@@ -48,10 +67,15 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: rgba(51, 51, 51, 0.7); /* Slightly transparent background */
+    display: flex; /* Align links in a row */
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 nav ul li {
     float: left;
+    margin-right: 20px; /* Space between links */
 }
 
 nav ul li a {
@@ -78,6 +102,7 @@ main {
     padding: 20px;
     transition: transform 0.2s;
     overflow: hidden; /* Ensure the content doesn't overflow */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
 }
 
 .card img {
@@ -155,6 +180,8 @@ form input[type="submit"]:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Ensures three columns */
     gap: 20px; /* Space between grid items */
+    transition: background-color 0.5s ease; /* Added transition for fading */
+    background-color: white; /* Default background color */
 }
 
 .client {
@@ -188,24 +215,192 @@ p.special-text {
 details summary {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Aligns content to the right end */
+    justify-content: space-between; /* Ensures content is spaced between */
     cursor: pointer;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: bold; /* Make the text bold */
+    padding: 10px 15px; /* Add padding to ensure space around text and triangle */
 }
 
 details summary::-webkit-details-marker {
-    display: none;
+    display: none; /* Hide the default arrow */
 }
 
 details summary::after {
-    content: '▼';
-    font-size: 1.5em;
-    color: #808000; /* Olive green color for the triangle when closed */
-    transition: transform 0.3s ease;
+    content: '▼'; /* Triangle pointing down */
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #333; /* Match the color of the text */
+    margin-left: auto; /* Pushes the triangle to the right */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
 }
 
 details[open] summary::after {
     content: '▲'; /* Triangle pointing up when details are open */
-    color: #808000; /* Olive green color for the triangle when open */
+    transform: rotate(0deg); /* Rotate back if needed */
 }
+
+h3 {
+    font-weight: bold;
+}
+
+table {
+    width: 100%; /* Ensure the table takes full width */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    transition: background-color 0.5s ease; /* Added transition for fading */
+}
+
+th, td {
+    padding: 10px; /* Add padding for better appearance */
+    border: 1px solid #ddd; /* Light border for table cells */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Added transition for fading */
+}
+
+.dark-mode table {
+    background-color: #333; /* Dark background for the table in dark mode */
+}
+
+.dark-mode th, .dark-mode td {
+    background-color: #444; /* Dark background for header and cells in dark mode */
+    color: #ffffff; /* Light text for header and cells in dark mode */
+}
+
+.clients-grid table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.clients-grid th, .clients-grid td {
+    border-left: transparent;
+    border-right: transparent;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Added transition for fading */
+}
+
+.clients-grid th {
+    background-color: #b5c99a; /* Light olive green background for header cells */
+}
+
+.dark-mode .clients-grid th {
+    background-color: #333; /* Dark background for header cells in dark mode */
+    color: #ffffff; /* Light text for header cells in dark mode */
+}
+
+.dark-mode .clients-grid td {
+    background-color: #444; /* Dark background for table cells in dark mode */
+    color: #ffffff; /* Light text for table cells in dark mode */
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    gap: 20px; /* Space between grid items */
+    transition: background-color 0.5s ease; /* Added transition for fading */
+    background-color: white; /* Default background color */
+}
+
+.dark-mode .clients-grid {
+    background-color: #222; /* Dark background for the clients grid in dark mode */
+}
+
+/* ... existing styles ... */
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Dark Mode %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+/* Updated styles for the dark mode toggle */
+.toggle {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #444;
+    border-radius: 2rem;
+    user-select: none;
+    cursor: pointer;
+    transition: translate 0.3s, background-color 0.8s;
+}
+
+.toggle::before {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    content: "";
+    height: calc(100% - 2px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: translate 0.3s, background-color 0.8s;
+    background: #fff;
+}
+
+.toggle input {
+    position: absolute;
+    appearance: none;
+}
+
+.toggle span {
+    position: relative;
+    transition: translate 0.6s ease 0.2s;
+}
+
+.toggle span:nth-of-type(1) {
+    translate: 0 150%;
+}
+
+.toggle span:nth-of-type(2) {
+    translate: 0 0%;
+}
+
+.toggle:has(input:checked) {
+    background-color: #ddd;
+}
+
+.toggle:has(input:checked) span:nth-of-type(1) {
+    translate: 0 0%;
+}
+
+.toggle:has(input:checked) span:nth-of-type(2) {
+    translate: 0 -150%;
+}
+
+.toggle:has(input:checked)::before {
+    translate: 100% 0;
+    background-color: #444;
+}
+
+/* Updated styles for the dark mode toggle button */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+.card.dark-mode {
+    background-color: #1e1e1e; /* Dark background for cards */
+    color: #ffffff; /* Light text for cards */
+}
+
+/* Updated styles for the summary title */
+.summary-title {
+    background-color: #f0f0f0; /* Default background color */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.5s ease; /* Added transition for fading */
+}
+
+.dark-mode .summary-title {
+    background-color: #444; /* Dark background for summary title in dark mode */
+    color: #ffffff; /* Light text for summary title in dark mode */
+}
+
+/* ... existing styles ... */

@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhytoSense</title>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="animation.js"></script>
     <style>
         .hero-image {
-                        background-image: url('pics/wheat\ mature.jpeg');
+                        background-image: url('pics/wheat mature.jpeg');
                         background-size: cover;
                         background-position: center;
                         height: 70vh; /* Adjust the height as needed */
@@ -44,55 +46,7 @@
             font-size: 1em; /* Adjust base size */
             letter-spacing: 2px; /* Reduce letter spacing on smaller screens */
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2em; /* Smaller font size on tablets */
-            }
-            .hero-text p {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.5em; /* Even smaller font size on phones */
-            }
-            .hero-text p {
-                font-size: 0.8em;
-            }
-        }
-
-        /* New styles for references */
-        .references {
-            background-color: #f9f9f9; /* Light grey background */
-            padding: 20px; /* Padding around the content */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
-            margin-top: 20px; /* Space above the section */
-        }
-        .references h3 {
-            color: #333; /* Dark grey color for the heading */
-            margin-bottom: 10px; /* Space below the heading */
-        }
-        .references ul {
-            list-style-type: none; /* Remove default list styling */
-            padding: 0; /* Remove padding */
-        }
-        .references li {
-            margin-bottom: 8px; /* Space between list items */
-        }
-        .references a {
-            color: #0066cc; /* Blue color for links */
-            text-decoration: none; /* No underline */
-            transition: color 0.3s; /* Smooth transition for hover effect */
-        }
-        .references a:hover {
-            color: #ff6600; /* Orange color on hover */
-        }
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
     
 <body>
@@ -102,11 +56,15 @@
                 <ul>
                     <li><img src="pics/aestivumlogo.png" alt="Aestivum Lab Logo" height="45px" width="auto"></li>
                     <li><a href="index.html">Home</a></li>
-                    <!-- <li><a href="plant-protection.html">Plant Protection</a></li> -->
-                    <li><a href="agricultural-sensing">Agricultural Sensing</a></li>
+                    <li><a href="agricultural-sensing.html">Agricultural Sensing</a></li>
                     <li><a href="about-me.html">About Me</a></li>
                     <li><a href="get-in-touch.html">Get in Touch</a></li>
                 </ul>
+                <label class="toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span>☀️</span>
+                    <span>🌙</span>
+                </label> <!-- Moved dark mode toggle here -->
             </nav>
             <div class="hero-text">
                 <h1><span style="font-weight: normal; display: block; color: black;">Welcome to</span> PhytoSense</h1>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - The Aestivum Lab</title>
     <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="animation.js"></script>
     <style>
         .hero-image {
             background-image: url('pics/me.jpg'); /* Make sure this path is correct */
@@ -36,128 +38,6 @@
             font-weight: bold; /* Make the font bold */
             margin: 0;
         }
-
-        .summary-title {
-            background-color: #f0f0f0; /* Light grey background */
-            color: #333; /* Dark grey text */
-            padding: 10px 15px; /* Padding around the text */
-            margin: 10px 0; /* Space above and below the box */
-            border-radius: 5px; /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-            display: block; /* Ensure it takes up the full width */
-            cursor: pointer; /* Indicates this is clickable */
-        }
-
-        details summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Ensures content is spaced between */
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: bold; /* Make the text bold */
-            padding: 10px 15px; /* Add padding to ensure space around text and triangle */
-        }
-
-        details summary::-webkit-details-marker {
-            display: none; /* Hide the default arrow */
-        }
-
-        details summary::after {
-            content: '▼'; /* Triangle pointing down */
-            font-size: 1.5em; /* Adjust size as needed */
-            color: #333; /* Match the color of the text */
-            margin-left: auto; /* Pushes the triangle to the right */
-            transition: transform 0.3s ease; /* Smooth transition for rotation */
-        }
-
-        details[open] summary::after {
-            content: '▲'; /* Triangle pointing up when details are open */
-            transform: rotate(0deg); /* Rotate back if needed */
-        }
-
-        h3 {
-            font-weight: bold;
-        }
-
-        table {
-            border-collapse: collapse; /* Ensures that the border is seen as one single line instead of double */
-            width: 100%; /* Optional: ensures the table takes the full width of its container */
-        }
-        th, td {
-            border: 1px solid black; /* Adds border to table cells */
-            padding: 8px; /* Adds space between the text and the borders of the cells */
-            background-color: #fff; /* Set default background to white for all cells */
-        }
-        th {
-            background-color: #b5c99a; /* Light olive green background for header cells */
-        }
-
-        .clients-grid table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .clients-grid th, .clients-grid td {
-            border-left: transparent;
-            border-right: transparent;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        .clients-grid tr:first-child td {
-            border-top: none;
-        }
-
-        .clients-grid tr:last-child td {
-            border-bottom: none;
-        }
-
-        .centered-content {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-    </style>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Creates three columns */
-            gap: 20px; /* Space between grid items */
-        }
-        .client {
-            text-align: center; /* Center-aligns the content */
-        }
-        .client img {
-            width: auto; /* Adjust size as needed */
-            height: 80px;
-            margin-bottom: 10px; /* Space between logo and text */
-        }
-        .large-title {
-            font-size: 1.5em; /* Larger font size */
-            font-weight: bold; /* Bold text */
-            margin-top: 20px; /* Space above the title */
-        }
-        @media (max-width: 768px) {
-            .clients-grid {
-                display: flex;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
-            }
-            .client {
-                flex: 0 0 auto;
-                width: 200px;
-                scroll-snap-align: start;
-                margin-right: 20px;
-            }
-            .client:last-child {
-                margin-right: 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -168,11 +48,15 @@
                 <ul>
                     <li><img src="pics/aestivumlogo.png" alt="Aestivum Lab Logo" height="45px" width="auto"></li>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="agricultural-sensing">Agricultural Sensing</a></li>
-                    <!-- <li><a href="plant-protection.html">Plant Protection</a></li> -->
+                    <li><a href="agricultural-sensing.html">Agricultural Sensing</a></li>
                     <li><a href="about-me.html">About Me</a></li>
                     <li><a href="get-in-touch.html">Get in Touch</a></li>
                 </ul>
+                <label class="toggle" aria-label="Toggle dark mode">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span>☀️</span>
+                    <span>🌙</span>
+                </label> <!-- Moved dark mode toggle here -->
             </nav>
             <div class="hero-text">
                 <h1><span style="font-weight: normal; display: block; color: rgb(255, 255, 255);">About Me</h1>
@@ -193,6 +77,8 @@
                     <p>Currently, I am working as a research analyst for testing the efficacy and ecotoxicology of plant protection products, especially biopesticides, on arable crops.</p>
                 </details>
             </section>
+        </div>
+        <div class="card">            
             <section>
                 <details>
                     <summary class="summary-title"><h3>Educational Excellence</h3></summary>
@@ -203,6 +89,8 @@
                     <p>The course involved 5 taught modules, which were: Technologies in Biosciences, Bioinformatics and Data Science, Frontiers in Plant Science, Innovation and Technology Management, and Agriculture and Biotechnology, in addition to an extensive research project, in which I spent 6 months working full-time in a well-established molecular biology and biochemistry lab. Eventually, I got a distinction for my research project and a merit for the degree, and wide experience in plant molecular biology to add to my wallet.</p>
                 </details>
             </section>
+        </div>
+        <div class="card">            
             <section>
                 <details>
                     <summary class="summary-title"><h3>Research Experience</h3></summary>
@@ -213,6 +101,8 @@
                     <p>My research project at Durham University was focused on the plant-pathogen interaction by studying post-translational modifications of a pattern recognition receptor, called CERK1, which is the responsible protein for the detection of pathogenic fungus by perceiving chitin. Arabidopsis thaliana was used as a model plant and Botrytis cinerea was used as a model fungus. The research findings contribute to the gap in the field of pathogen detection by plant cells and will be published as soon as the rest of the work on that project is done by current lab members at Ari Sadanandom's Lab (expected mid-2025).</p>
                 </details>
             </section>
+        </div>
+        <div class="card">            
             <section>
                 <details>
                     <summary class="summary-title"><h3>Practical Experience</h3></summary>
@@ -245,6 +135,8 @@
                     </table>
                 </details>
             </section>
+        </div>
+        <div class="card">            
             <section>
                 <details>
                     <summary class="summary-title"><h3>Projects</h3></summary>
@@ -307,56 +199,56 @@
                     </table>
                 </details>
             </section>
-            <section>
-                <h2><strong>Clients</strong></h3>
-                <div class="clients-grid">
-                    <div class="client">
-                        <img src="pics/pillars_consulting.jpg" alt="Pillars Consulting Logo">
-                        <p><strong>Pillars Consulting</strong></p>
-                    </div>
-                    <div class="client">
-                        <img src="pics/burj.agristore.jpg" alt="Burj Agristore Logo">
-                        <p><strong>Burj Agristore</strong></p>
-                    </div>
-
-                    <div class="client">
-                        <img src="pics/padriff.jpg" alt="PADRIFF Logo">
-                        <p><strong>PADRIFF</strong></p>
-                    </div>
-                    <div class="client">
-                        <img src="pics/UAWC.jpg" alt="UAWC Logo">
-                        <p><strong>UAWC</strong></p>
-                    </div>
-                    <div class="client">
-                        <img src="pics/ARIJ.jpg" alt="ARIJ Logo">
-                        <p><strong>ARIJ</strong></p>
-                    </div>
-
-                    <div class="client">
-                        <img src="pics/Birzeit University2.png" alt="Birzeit Logo">
-                        <p><strong>Birzeit University</strong></p>
-                    </div>
-
-
-                    <div class="client">
-                        <img src="pics/icph-logo.png" alt="ICPH Logo">
-                        <p><strong>Institue of Community and Public Health</strong></p>
-                    </div>
-
-                    <div class="client">
-                        <img src="pics/aman-logo1.png" alt="AMAN Logo">
-                        <p><strong>Aman Transparency Palestine</strong></p>
-                    </div>
-
-                    <div class="client"></div>
-                    <div class="client">
-                        <p class="large-title">150+ Small Farmers and Gardeners in the West Bank</p>
-                    </div>
-                    <div class="client"></div>
-                    
-            </section>
-
         </div>
+        <section>
+            <h2><strong>Clients</strong></h3>
+            <div class="clients-grid">
+                <div class="client">
+                    <img src="pics/pillars_consulting.jpg" alt="Pillars Consulting Logo">
+                    <p><strong>Pillars Consulting</strong></p>
+                </div>
+                <div class="client">
+                    <img src="pics/burj.agristore.jpg" alt="Burj Agristore Logo">
+                    <p><strong>Burj Agristore</strong></p>
+                </div>
+
+                <div class="client">
+                    <img src="pics/padriff.jpg" alt="PADRIFF Logo">
+                    <p><strong>PADRIFF</strong></p>
+                </div>
+                <div class="client">
+                    <img src="pics/UAWC.jpg" alt="UAWC Logo">
+                    <p><strong>UAWC</strong></p>
+                </div>
+                <div class="client">
+                    <img src="pics/ARIJ.jpg" alt="ARIJ Logo">
+                    <p><strong>ARIJ</strong></p>
+                </div>
+
+                <div class="client">
+                    <img src="pics/Birzeit University2.png" alt="Birzeit Logo">
+                    <p><strong>Birzeit University</strong></p>
+                </div>
+
+
+                <div class="client">
+                    <img src="pics/icph-logo.png" alt="ICPH Logo">
+                    <p><strong>Institue of Community and Public Health</strong></p>
+                </div>
+
+                <div class="client">
+                    <img src="pics/aman-logo1.png" alt="AMAN Logo">
+                    <p><strong>Aman Transparency Palestine</strong></p>
+                </div>
+
+                <div class="client"></div>
+                <div class="client">
+                    <p class="large-title">150+ Small Farmers and Gardeners in the West Bank</p>
+                </div>
+                <div class="client"></div>
+                
+        </section>
+
     </main>
     
     <footer>
